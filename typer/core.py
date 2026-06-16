@@ -196,7 +196,7 @@ def _main(
             raise _click.exceptions.Abort() from e
         except KeyboardInterrupt as e:
             raise _click.exceptions.Exit(130) from e
-        except _click.exceptions.ClickException as e:
+        except _click.exceptions.TyperException as e:
             if not standalone_mode:
                 raise
             # Typer override

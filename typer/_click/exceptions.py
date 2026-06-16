@@ -16,8 +16,8 @@ def _join_param_hints(param_hint: Sequence[str] | str | None) -> str | None:
     return param_hint
 
 
-class ClickException(Exception):
-    """An exception that Click can handle and show to the user."""
+class TyperException(Exception):
+    """An exception that Typer can handle and show to the user."""
 
     exit_code = 1
 
@@ -45,7 +45,7 @@ class ClickException(Exception):
         )
 
 
-class UsageError(ClickException):
+class UsageError(TyperException):
     """An internal exception that signals a usage error.  This typically
     aborts any further handling.
     """
@@ -230,7 +230,7 @@ class NoArgsIsHelpError(UsageError):
         echo(self.format_message(), file=file, err=True, color=self.ctx.color)
 
 
-class FileError(ClickException):
+class FileError(TyperException):
     """Raised if a file cannot be opened."""
 
     def __init__(self, filename: str, hint: str | None = None) -> None:

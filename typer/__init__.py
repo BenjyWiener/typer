@@ -6,8 +6,13 @@ from shutil import get_terminal_size as get_terminal_size
 
 from . import colors as colors
 from ._click.exceptions import Abort as Abort
+from ._click.exceptions import BadArgumentUsage as BadArgumentUsage
+from ._click.exceptions import BadOptionUsage as BadOptionUsage
 from ._click.exceptions import BadParameter as BadParameter
 from ._click.exceptions import Exit as Exit
+from ._click.exceptions import NoSuchOption as NoSuchOption
+from ._click.exceptions import TyperException as TyperException
+from ._click.exceptions import UsageError as UsageError
 from ._click.termui import confirm as confirm
 from ._click.termui import getchar as getchar
 from ._click.termui import progressbar as progressbar

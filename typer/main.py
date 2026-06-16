@@ -1813,7 +1813,7 @@ def get_param_callback(
             if untyped_names:
                 click_param_name = untyped_names.pop(0)
         if untyped_names:
-            raise _click.ClickException(
+            raise _click.TyperException(
                 "Too many CLI parameter callback function parameters"
             )
 
@@ -1870,7 +1870,7 @@ def get_param_completion(
     # Extract value param name first
     if unassigned_params:
         show_params = " ".join([param.name for param in unassigned_params])
-        raise _click.ClickException(
+        raise _click.TyperException(
             f"Invalid autocompletion callback parameters: {show_params}"
         )
 
